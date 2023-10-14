@@ -1044,7 +1044,9 @@ final class bbPress {
  * @return bbPress The one true bbPress Instance
  */
 function bbpress() {
+    add_filter( 'astra_single_post_navigation_enabled', '__return_false' );
 	return bbPress::instance();
+ 
 }
 
 /**

@@ -80,6 +80,13 @@ if ( ! bbp_is_single_forum() ) : ?>
 					<?php bbp_get_template_part( 'form', 'anonymous' ); ?>
 
 					<?php do_action( 'bbp_theme_before_topic_form_title' ); ?>
+					
+					<div class="bbp-template-notice">
+						<ul>
+								<li><?php esc_html_e( 'مهم جدا أن تبحث عن مشكلتك في منتديات الدعم قبل ارسال موضوع جديد', 'bbpress' ); ?></li>
+						</ul>
+						
+					</div>
 
 					<p>
 						<label for="bbp_topic_title"><?php printf( esc_html__( 'Topic Title (Maximum Length: %d):', 'bbpress' ), bbp_get_title_max_length() ); ?></label><br />
@@ -246,17 +253,10 @@ if ( ! bbp_is_single_forum() ) : ?>
 			<ul>
 				<li><?php is_user_logged_in()
 					? esc_html_e( 'You cannot create new topics.',               'bbpress' )
-					: esc_html_e( 'You must be logged in to create new topics.', 'bbpress' );
+                        : printf( __( 'يجب أن تكون قد سجلت الدخول لإنشاء مواضيع جديدة. <a href="%s">انقر هنا لتسجيل الدخول او تسجيل حساب جديد.</a>', 'bbpress' ), esc_url( home_url( '/my-account/' ) ) );
 				?></li>
 			</ul>
 		</div>
-
-		<?php if ( ! is_user_logged_in() ) : ?>
-
-			<?php bbp_get_template_part( 'form', 'user-login' ); ?>
-
-		<?php endif; ?>
-
 	</div>
 
 <?php endif; ?>

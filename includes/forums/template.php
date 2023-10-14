@@ -1957,7 +1957,8 @@ function bbp_forum_class( $forum_id = 0, $classes = array() ) {
  * @param array $args Arguments passed to alter output
  */
 function bbp_single_forum_description( $args = array() ) {
-	echo bbp_get_single_forum_description( $args );
+	// We don't need to display these info on Nagdy.me
+//	echo bbp_get_single_forum_description( $args );
 }
 	/**
 	 * Return a fancy description of the current forum, including total

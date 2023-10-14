@@ -219,16 +219,11 @@ if ( bbp_is_reply_edit() ) : ?>
 			<ul>
 				<li><?php is_user_logged_in()
 					? esc_html_e( 'You cannot reply to this topic.',               'bbpress' )
-					: esc_html_e( 'You must be logged in to reply to this topic.', 'bbpress' );
+                        : printf( __( 'يجب أن تكون قد سجلت الدخول للرد على هذا الموضوع. <a href="%s">اضغط هنا لتسجيل الدخول او تسجيل حساب جديد.</a>', 'bbpress' ), esc_url( home_url( '/my-account/' ) ) );
+
 				?></li>
 			</ul>
 		</div>
-
-		<?php if ( ! is_user_logged_in() ) : ?>
-
-			<?php bbp_get_template_part( 'form', 'user-login' ); ?>
-
-		<?php endif; ?>
 
 	</div>
 
