@@ -3275,7 +3275,8 @@ function bbp_form_topic_status_dropdown( $args = array() ) {
  * @param array $args See {@link bbp_get_single_topic_description()}
  */
 function bbp_single_topic_description( $args = array() ) {
-	echo bbp_get_single_topic_description( $args );
+    // We don't need to display these info on Nagdy.me
+//	echo bbp_get_single_topic_description( $args );
 }
 	/**
 	 * Return a fancy description of the current topic, including total topics,
